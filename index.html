@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFlow - Modern Web Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="body">
+    <main class="main-content">
+      <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">TechFlow</a>
+                <div class="theme-toggle">
+                    <button onclick="change()"><i id="moon" class="ri-moon-fill"></i></button>
+                </div>
+        </nav>
+    </header>                
+        <section id="features" class="features">
+            <div class="features-container">
+                <h2 class="section-title" id="services">Our Services</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3 class="feature-title">Web Development</h3>
+                        <p class="feature-description">
+                            Custom websites built with modern technologies. 
+                            Responsive, fast, and optimized for all devices.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">UI/UX Design</h3>
+                        <p class="feature-description">
+                            Beautiful and intuitive designs that provide 
+                            exceptional user experiences and drive conversions.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Performance</h3>
+                        <p class="feature-description">
+                            Lightning-fast websites optimized for speed, 
+                            SEO, and superior performance across all platforms.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+<script>
+    function change() {
+        let body = document.getElementById("body");
+        let services = document.querySelector(".section-title");
+
+        let titles = document.querySelectorAll(".feature-title");
+        let paragraphs = document.querySelectorAll(".feature-description");
+        let cards = document.querySelectorAll(".feature-card");
+        let logo = document.querySelector(".logo");
+
+        body.style.background = "black";
+        logo.style.color = "white"
+        services.style.color = "white";
+
+        cards.forEach(card => {
+            card.style.border = "2px solid white";
+        });
+
+        titles.forEach(title => {
+            title.style.color = "white";
+        });
+
+        paragraphs.forEach(p => {
+            p.style.color = "white";
+        });
+
+        let theme = document.querySelector(".theme-toggle");
+        theme.innerHTML = `
+            <button onclick="white()"><i id="sun" class="ri-sun-fill"></i></button>
+        `;
+        localStorage.setItem("theme" , "black")
+        localStorage.setItem("theme2" , "white")
+    }
+    
+    function white() {
+        let body = document.getElementById("body");
+        let services = document.querySelector(".section-title");
+        
+        let titles = document.querySelectorAll(".feature-title");
+        let paragraphs = document.querySelectorAll(".feature-description");
+        let cards = document.querySelectorAll(".feature-card");
+        let logo = document.querySelector(".logo");
+        body.style.background = "white";
+        logo.style.color = "black"
+        services.style.color = "black";
+        
+        cards.forEach(card => {
+            card.style.border = "2px solid black";
+        });
+        
+        titles.forEach(title => {
+            title.style.color = "black";
+        });
+        
+        paragraphs.forEach(p => {
+            p.style.color = "black";
+        });
+        
+        let theme = document.querySelector(".theme-toggle");
+        theme.innerHTML = `
+        <button onclick="change()"><i id="moon" class="ri-moon-fill"></i></button>
+        `;
+        
+        localStorage.setItem("theme" , "white")
+        localStorage.setItem("theme2" , "black")
+    }
+    let theme = localStorage.getItem("theme")
+    let theme2 = localStorage.getItem("theme2")
+
+    if(theme == "white" && theme2 == "black"){
+        let body = document.getElementById("body");
+        let services = document.querySelector(".section-title");
+        
+        let titles = document.querySelectorAll(".feature-title");
+        let paragraphs = document.querySelectorAll(".feature-description");
+        let cards = document.querySelectorAll(".feature-card");
+        let logo = document.querySelector(".logo");
+        body.style.background = "white";
+        logo.style.color = "black"
+        services.style.color = "black";
+        
+        cards.forEach(card => {
+            card.style.border = "2px solid black";
+        });
+        
+        titles.forEach(title => {
+            title.style.color = "black";
+        });
+        
+        paragraphs.forEach(p => {
+            p.style.color = "black";
+        });
+        
+        let theme = document.querySelector(".theme-toggle");
+        theme.innerHTML = `
+        <button onclick="change()"><i id="moon" class="ri-moon-fill"></i></button>
+        `;
+    }else{
+        let body = document.getElementById("body");
+        let services = document.querySelector(".section-title");
+
+        let titles = document.querySelectorAll(".feature-title");
+        let paragraphs = document.querySelectorAll(".feature-description");
+        let cards = document.querySelectorAll(".feature-card");
+        let logo = document.querySelector(".logo");
+
+        body.style.background = "black";
+        logo.style.color = "white"
+        services.style.color = "white";
+
+        cards.forEach(card => {
+            card.style.border = "2px solid white";
+        });
+
+        titles.forEach(title => {
+            title.style.color = "white";
+        });
+
+        paragraphs.forEach(p => {
+            p.style.color = "white";
+        });
+
+        let theme = document.querySelector(".theme-toggle");
+        theme.innerHTML = `
+            <button onclick="white()"><i id="sun" class="ri-sun-fill"></i></button>
+        `;
+    }
+</script>
+</html>
